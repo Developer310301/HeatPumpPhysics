@@ -2,7 +2,7 @@
 Questa applicazione aiuta a svolgere i calcoli delle **entalpie** e del **COP** (Coefficient Of Performace) delle pompe di calore.
 ## Utilizzo
 ### Inserimento dati
-L'applicazione, alla sua apertura, presenta una tabella dove è possibile inserire i valori di **temperatura**, **pressione**, **portata massica** e **assorbimento**.  Le colonne invece delle entalpie e del COP non sono editabili manualmente perchè sono colonne che vengono calcolate automaticamente. Una volta definiti i dati nella tabella si può procedere al calcolo delle entalpie e del COP selezionando il fluido desiderato (menu tendina a destra) e successivamente premendo sul pulsante in basso a destra **"Calcola Valori"**.
+L'applicazione, alla sua apertura, presenta una tabella dove è possibile inserire i valori di **temperatura**, **pressione**, **portata massica** e **assorbimento**.  Le colonne invece delle entalpie e del COP non sono editabili manualmente perchè sono colonne che vengono calcolate automaticamente. Una volta definiti i dati nella tabella si può procedere al calcolo delle entalpie e del COP premendo sul pulsante in basso a destra **"Calcola Valori"**.
 Alla tabella si possono aggiungere e rimuovere righe premendo, rispettivamente, sui pulsanti **Aggiungi Riga** e **Rimuovi Riga**. Per poter rimuovere le righe, si deve selezionare la riga o le righe (basta selezionare una riga e poi con Shift+Freccia Giù/Su) e poi premere sul corrispettivo pulsante.
 ### Import/Export dati
 L'applicazione presenta inoltre la possibilità di importare ed esportare i dati in formato **CSV**.
@@ -28,6 +28,25 @@ Tenendo premuto la rotella centrale del mouse e trascinandola è possibile effet
 Tenendo premuto il tasto sinistro del mouse è possibile spostarsi nel grafico zoommato.
 #### Menu a tendina
 Premendo il tasto destro del mouse si può accedere a un menù a tendina che permette di esportare il grafico sottoforma di immagine o di resettare lo zoom del grafico.
+
+## Calcolo Entalpia
+Per il calcolo dell'entalpia si è utilizzata la libreria [CoolProp](http://www.coolprop.org/) che permette di interfacciarsi col la banca dati [Refprop](https://www.nist.gov/srd/refprop) che contiene tutti i dati e parametri fisici di vari fluidi.
+
+## Calcolo del COP
+Per il calcolo del **COP** si è utilizzata la formula`COP = Q/W` dove `Q` è il calore generato dalla pompa di calore e calcolato come: `Q=m*(h1-h2)` dove:
+
+ - `m` è la portata massica
+ - `h1` e `h2` solo rispettivamente l'entalpia in ingresso e l'entalpia in uscita della pompa di calore
+
+## Unità di Misura
+|Nome|Unità di misura|
+|--|--|
+|Temperatura|°C|
+|Pressione|bar|
+|Portata Massica|Kg/s|
+|Assorbimento|W|
+|Entalpia|J/Kg|
+|COP|W/W|
 
 ## Shortcut
 |Shortcut|Azione|
